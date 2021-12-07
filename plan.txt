@@ -1,5 +1,5 @@
 rule = roll 2 dice, alternating player
-goal = first reach pyramid, and back to spain
+goal = first reach pyramid
 item = [gold,knowledge,sheep]
 
 start:
