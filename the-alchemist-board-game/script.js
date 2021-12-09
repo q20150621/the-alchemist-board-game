@@ -4,9 +4,9 @@ function generatePath(){
     const totalOffest = [200,200]
     const axises = [ //x,y,line to [x,y] or function ({})
         [70,0,[70,80]],
-        [70,80],
-        [100,170],
-        [150,110],
+        [70,80,[150,110]],
+        [100,170,[70,80]],
+        [150,110,],
         [250,90],
         [360,90],
         [420,30],
@@ -16,7 +16,7 @@ function generatePath(){
     ]
     axises.forEach(axisFunc=>{
         let newPathNode = document.createElement('div')
-        let newLine = document.createElement('line')
+        let newLine = document.createElementNS('http://www.w3.org/2000/svg','line')
         newPathNode.setAttribute('class','path');
 
         if(typeof axisFunc == "function"){
@@ -30,10 +30,10 @@ function generatePath(){
             newPathNode.style.left = `${axis[0]+totalOffest[0]}px`
             newPathNode.style.top = `${axis[1]+totalOffest[1]}px`
             if(axis.length==3){ // has line axis
-                newLine.setAttribute('x1',`${axis[0]+totalOffest[0]}`)
-                newLine.setAttribute('y1',`${axis[1]+totalOffest[1]}`)
-                newLine.setAttribute('x2',`${axis[2][0]+totalOffest[0]}`)
-                newLine.setAttribute('y2',`${axis[2][1]+totalOffest[1]}`)
+                newLine.setAttribute('x1',`${axis[0]+totalOffest[0]+20}`)
+                newLine.setAttribute('y1',`${axis[1]+totalOffest[1]+10}`)
+                newLine.setAttribute('x2',`${axis[2][0]+totalOffest[0]+20}`)
+                newLine.setAttribute('y2',`${axis[2][1]+totalOffest[1]+10}`)
             }else{
                 newLine = null
             }
