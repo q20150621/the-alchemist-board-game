@@ -1,0 +1,27 @@
+<head>
+    <script>
+        console.time("loading time")
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flex-container">
+        <div id="header">The Alchemist Board Game</div>
+        <div id="toolbar">
+            <button id="startgame">Start Game</button>
+            <button id="infobutton">Status</button>
+            <button id="howtoplaybutton">How to Play</button>
+            <button id="howtomultiplayer">How to Multiplayer (Local) </button>
+            <button id="resetbutton">Restart Game</button>
+            <button id="developertool">Developer Tool (Console)</button>
+        </div>
+    </div>
+    
+    <div id="BoardContainer">
+        <svg id="LineContainer">
+        </svg>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+<script>console.timeEnd("loading time")</script>
